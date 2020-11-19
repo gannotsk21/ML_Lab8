@@ -35,23 +35,17 @@ np.random.shuffle(test_data)
 train_X=train_data[:,1:769]
 train_Y=train_data[:,0]
 train_Y=[[x] for x in train_Y]
-print("Training data")
-print(train_X[0:5])
-print(train_Y[0:5])
 test_X=test_data[:,1:769]
 test_Y=test_data[:,0]
 test_Y=[[x] for x in test_Y]
 
-num_classes=1
-epochs=20
-batch_size=100
 
 model = tf.keras.models.Sequential([
-  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Flatten(input_shape=(1, 768)),
   tf.keras.layers.Dense(128, activation='relu'),
   tf.keras.layers.Dropout(0.2),
   tf.keras.layers.Dense(10)
 ])
 
-predictions = model(x_train[:1]).numpy()
-print(predictions)
+
+sess = tf.Session()
