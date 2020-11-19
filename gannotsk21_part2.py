@@ -45,3 +45,13 @@ test_Y=[[x] for x in test_Y]
 num_classes=1
 epochs=20
 batch_size=100
+
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10)
+])
+
+predictions = model(x_train[:1]).numpy()
+print(predictions)
