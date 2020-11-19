@@ -9,7 +9,7 @@ import tensorflow as tf
 
 big_list = [] 
 #read data from file
-f = open('histograms3.txt')
+f = open('histo.txt')
 for line in f:
     big_list.append(line.strip().split(" "))
 f.close()
